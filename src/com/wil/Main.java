@@ -74,6 +74,10 @@ public class Main {
         fila.insert(t4);
         fila.insert(t1);
 
+        Compressor comp = new Compressor();
+        comp.getDictionary(fila.peek());
+        comp.showDictionary();
+
         while(fila.getSize() > 1){
             Node temp1 = fila.remove();
             Node temp2 = fila.remove();
@@ -127,7 +131,8 @@ public class Main {
         }
         String dictionary = "C:/Users/joswi/Documents/teste1.txt";
 
-        readDictionary(dictionary);
+//        readDictionary(dictionary);
+
     }
 
 }
