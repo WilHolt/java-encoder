@@ -11,16 +11,16 @@ public class Compressor {
     StringBuilder aux;
     Map<Integer,String> dictionary;
     public Compressor(){
+        aux = new StringBuilder();
     }
     public void getDictionary(Node node){
         if(node.getLeft() != null){
-            if(node.getLetter() - node.getLetter() != 0){// comparando apenas pra saber se existe
+            if(node.getLetter()==0){
                 aux.append("0");
-
             }else{
-                System.out.println(aux);
-                String aux2 = aux
-                dictionary.put(node.getLetter(), aux);
+                aux.deleteCharAt(0);
+                dictionary.put(node.getLetter(), aux.toString());
+
             }
             getDictionary(node.getLeft());
         }

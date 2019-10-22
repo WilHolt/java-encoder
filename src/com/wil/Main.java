@@ -74,9 +74,7 @@ public class Main {
         fila.insert(t4);
         fila.insert(t1);
 
-        Compressor comp = new Compressor();
-        comp.getDictionary(fila.peek());
-        comp.showDictionary();
+
 
         while(fila.getSize() > 1){
             Node temp1 = fila.remove();
@@ -89,10 +87,15 @@ public class Main {
             pai.setLeft(temp1);
             pai.setRight(temp2);
             fila.insert(pai);
-            System.out.println("rodou");
+            System.out.println(pai);
         }
+        Compressor comp = new Compressor();
 
-        fila.print();
+        comp.getDictionary(fila.peek());
+//        comp.showDictionary();
+
+
+//        fila.print();
 
         //////////////////////////////////////////////////////////////////////////////////
 
@@ -121,7 +124,7 @@ public class Main {
         }
             Set<Character> a = repetitions.keySet();
             for (Character t : a) {
-                System.out.println(t + " Ocurred " + repetitions.get(t) + " times");
+//                System.out.println(t + " Ocurred " + repetitions.get(t) + " times");
             }
 //            while((line = br.readLine()) != null){
 //

@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c52237c-0eca-438a-ab69-73cbad49961e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/encoder/com/wil/Compressor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/encoder/com/wil/Compressor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/encoder/com/wil/Extractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/encoder/com/wil/Extractor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/encoder/com/wil/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/encoder/com/wil/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/wil/Compressor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wil/Compressor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/wil/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wil/Main.java" afterDir="false" />
@@ -149,8 +147,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/wil/Main.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="41" />
+          <line>91</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -161,6 +159,10 @@
       <configuration name="Application">
         <watch expression="t5" language="JAVA" />
         <watch expression="t5" language="JAVA" />
+        <watch expression="comp" />
+        <watch expression="pai.right" />
+        <watch expression="pai" />
+        <watch expression="comp" />
       </configuration>
     </watches-manager>
   </component>
