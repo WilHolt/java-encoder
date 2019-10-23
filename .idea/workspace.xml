@@ -4,15 +4,16 @@
     <list default="true" id="7c52237c-0eca-438a-ab69-73cbad49961e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/encoder/com/wil/Compressor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/encoder/com/wil/Compressor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/encoder/com/wil/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/encoder/com/wil/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/wil/Compressor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wil/Compressor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/wil/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wil/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="190" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -145,28 +146,15 @@
           <line>40</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/wil/Main.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="fila" />
       </configuration>
-      <configuration name="Application">
-        <watch expression="t5" language="JAVA" />
-        <watch expression="t5" language="JAVA" />
-        <watch expression="comp" />
-        <watch expression="pai.right" />
-        <watch expression="pai" />
-        <watch expression="comp" />
-      </configuration>
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/encoder$Main.ic" NAME="Main Coverage Results" MODIFIED="1571361055245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/encoder$Main.ic" NAME="Main Coverage Results" MODIFIED="1571787314683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

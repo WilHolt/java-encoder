@@ -2,31 +2,37 @@ package com.wil;
 
 import javafx.util.Pair;
 
-import java.util.ArrayList;
-import java.util.BitSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Compressor {
     StringBuilder aux;
     Map<Integer,String> dictionary;
+    int count = 0;
+
     public Compressor(){
+        dictionary = new HashMap<>();
         aux = new StringBuilder();
     }
-    public void getDictionary(Node node){
-        if(node.getLeft() != null){
-            if(node.getLetter()==0){
-                aux.append("0");
-            }else{
-                aux.deleteCharAt(0);
-                dictionary.put(node.getLetter(), aux.toString());
 
-            }
-            getDictionary(node.getLeft());
+    //99471-3399
+    public HashMap<Integer, String> getDictionary(Node node){
+        HashMap<Integer, String> dict = new HashMap<>();
+        getDictionary(dict, node, "");
+
+        return dict;
+    }
+
+    private HashMap<Integer, String> getDictionary(HashMap<Integer, String> dict, Node node, String path) {
+        if (node.getRight() == null && node.getLeft() == null) {
+            dict.put(node.getLetter(), path);
         }
-        if(node.getRight() != null){
-            getDictionary(node.getRight());
+        if (node.getRight() != null) {
+            getDictionary(dict, node.getRight(), path + "1");
         }
+        if (node.getLeft() != null) {
+            getDictionary(dict, node.getLeft(), path + "0");
+        }
+        return dict;
     }
     public void showDictionary(){
         Set<Integer> a = dictionary.keySet();
