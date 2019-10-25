@@ -17,35 +17,7 @@ import static org.junit.Assert.assertSame;
 
 public class Main {
 
-    public static void readDictionary(String file){
-        String dictionary = "C:/Users/joswi/Documents/caminho.txt";
 
-        Map<Character,String> repetitions = new HashMap<Character, String>();
-        try (BufferedReader buffer = new BufferedReader(new InputStreamReader(
-                new FileInputStream(dictionary), StandardCharsets.UTF_8));) {
-            String line;
-            while(buffer.ready()){
-                line = buffer.readLine();
-                for(int i =0; i< line.length(); i++){
-                    char aux = line.charAt(0);
-                    repetitions.put(aux, (line.substring(1)));
-                }
-            }
-            Set<Character> a = repetitions.keySet();
-            for (Character t : a) {
-                System.out.println(t + " letter " + repetitions.get(t) + " code");
-            }
-//            while((line = br.readLine()) != null){
-//
-//
-//            }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     public static void main(String[] args)  throws FileNotFoundException, IOException {
 
 	// write your code here
@@ -92,9 +64,11 @@ public class Main {
         Compressor comp = new Compressor();
 
         comp.getDictionary(fila.peek());
+        comp.compress(fila.peek(),"lollapalooza");
 //        comp.showDictionary();
 
-
+        Extractor winrar = new Extractor();
+        winrar.extract("C:/Users/joswi/Documents/saida.edz", "C:/Users/joswi/Documents/lola.txt");
 //        fila.print();
 
         //////////////////////////////////////////////////////////////////////////////////
