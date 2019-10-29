@@ -2,6 +2,9 @@ package com.wil;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.BitSet;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,51 +33,58 @@ public class Extractor {
         BitSet bitset;
         bitset = BitSet.valueOf(bArray);
         StringBuilder aux = new StringBuilder("");
+        StringBuilder SBtoSave = new StringBuilder("");
+        String StringToSave;
         ///SÓ PRA CONFERIR
         for (int i=0; i< bitset.length(); i++) {
             if(bitset.get(i) == true) {
-                System.out.print("1");
+                aux.append("1");
+//                System.out.println("o aux feito:" + aux);
                 char temp =findInDictionary(readDictionary(dicFile), aux);
-                if(temp == ' '){
-                    aux.append("1");
-
-                }
                 if(temp != ' '){
                     System.out.print(temp);
+                    SBtoSave.append(temp);
                     aux.delete(0,aux.length());
                 }
             }else{
-                System.out.print("0");
                 aux.append("0");
-                if(findInDictionary(readDictionary(dicFile), aux) !=  ' '){
-                    System.out.print(findInDictionary(readDictionary(dicFile), aux));
+                char temp =findInDictionary(readDictionary(dicFile), aux);
+                if(temp != ' '){
+                    System.out.print(temp);
+                    SBtoSave.append(temp);
                     aux.delete(0,aux.length());
                 }
             }
         }
-
+        StringToSave = SBtoSave.toString();
+        saveFile(StringToSave);
         }
+
+    private void saveFile(String stringToSave) throws IOException {
+        Path file = Paths.get("C:/Users/joswi/Documents/extracted.txt");
+        Files.writeString(file, stringToSave);
+    }
 
     private char findInDictionary(HashMap<Character,String> dictionary,  StringBuilder aux) {
         char letter = ' ';
+//        System.out.println("aux recebido:" + aux);
         Set<Character> a = dictionary.keySet();
+        String expected = aux.toString();
         for (char t : a) {
 //            System.out.println(t + " letter " + dictionary.get(t) + " code");
             String letterCode = dictionary.get(t);
-            letter = t;
-            if(letterCode == aux.toString()){
+            if((letterCode.equals(expected))){
+                letter = t;
                 return letter;
             }
+
         }
 
-        for ( int mapReader =  0; mapReader < aux.length(); mapReader++){
-
-            }
         return letter;
     }
 
     public static HashMap<Character,String> readDictionary(String file){
-        String dictionary = "C:/Users/joswi/Documents/caminho.txt";
+        String dictionary = "C:/Users/joswi/Documents/teste1.edt";
         HashMap<Character,String> dict = new HashMap<Character, String>();
         try (BufferedReader buffer = new BufferedReader(new InputStreamReader(
                 new FileInputStream(dictionary), StandardCharsets.UTF_8));) {
@@ -98,6 +108,7 @@ public class Extractor {
         }
         return dict;
     }
+
     }
 
 

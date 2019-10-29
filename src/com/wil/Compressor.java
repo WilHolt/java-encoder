@@ -92,6 +92,6 @@ public class Compressor implements Utilities {
 
     @Override
     public void save(BufferedWriter writer,String lineToSave) throws IOException {
-        writer.write(lineToSave);
+        writer.write(lineToSave+'\n');
     }
 }
