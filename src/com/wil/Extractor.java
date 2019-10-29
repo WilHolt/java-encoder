@@ -34,12 +34,13 @@ public class Extractor {
         for (int i=0; i< bitset.length(); i++) {
             if(bitset.get(i) == true) {
                 System.out.print("1");
-                aux.append("1");
                 char temp =findInDictionary(readDictionary(dicFile), aux);
+                if(temp == ' '){
+                    aux.append("1");
+
+                }
                 if(temp != ' '){
                     System.out.print(temp);
-                }
-                if(temp == 'l'){
                     aux.delete(0,aux.length());
                 }
             }else{
