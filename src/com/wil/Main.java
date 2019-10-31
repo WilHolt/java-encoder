@@ -20,7 +20,6 @@ public class Main {
 
     public static void main(String[] args)  throws FileNotFoundException, IOException {
         heapQueue fila = new heapQueue(10);
-//
 //        String filename = "C:/Users/joswi/Documents/lola.txt";
 //        Map<Character,Integer> repetitions = new HashMap<Character, Integer>();
 //        try (BufferedReader buffer = new BufferedReader(new InputStreamReader(
@@ -83,13 +82,18 @@ public class Main {
             System.out.println(pai);
         }
         Compressor comp = new Compressor();
-
+    if(args[0] == "compress"){
         comp.getDictionary(fila.peek());
         comp.compress(fila.peek(),"lollapalooza");
+    }
+    if(args[1] == "extract"){
+        Extractor winrar = new Extractor();
+        winrar.extract("C:/Users/joswi/Documents/saida.edz", "C:/Users/joswi/Documents/teste1.edt");
+    }
+
 //        comp.showDictionary();
 
-        Extractor winrar = new Extractor();
-        winrar.extract("C:/Users/joswi/Documents/saida.edz", "C:/Users/joswi/Documents/lola.txt");
+
 //        fila.print();
 
         //////////////////////////////////////////////////////////////////////////////////

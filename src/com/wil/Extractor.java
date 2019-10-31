@@ -84,10 +84,10 @@ public class Extractor {
     }
 
     public static HashMap<Character,String> readDictionary(String file){
-        String dictionary = "C:/Users/joswi/Documents/teste1.edt";
+        String dictionary = "";
         HashMap<Character,String> dict = new HashMap<Character, String>();
         try (BufferedReader buffer = new BufferedReader(new InputStreamReader(
-                new FileInputStream(dictionary), StandardCharsets.UTF_8));) {
+                new FileInputStream(file), StandardCharsets.UTF_8));) {
             String line;
             while(buffer.ready()){
                 line = buffer.readLine();
