@@ -1,12 +1,15 @@
 package com.wil;
 
-import javafx.util.Pair;
-
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.BitSet;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
 
 public class Compressor implements Utilities {
 
@@ -40,38 +43,68 @@ public class Compressor implements Utilities {
             System.out.println(t + " letter " + dict.get(t) + " code");
         }
     }
-    public void compress(Node node, String line) throws IOException {
+    public void compress(Node node, List<String> textLines, String dicPath, String compressedPath) throws IOException {
+        Path file = Paths.get(compressedPath);
+
         HashMap<Integer, String> dictionary = getDictionary(node);
-        BitSet newLine = new BitSet(32);
         int count = 0;
-        for ( int lineReader =  0; lineReader < line.length(); lineReader++){
-            System.out.println(line.charAt(lineReader));
-            char aux = line.charAt(lineReader);
-            System.out.println( aux);
-            String letterCode =  dictionary.get((int) aux);
-            for(int k = 0 ; k< letterCode.length(); k++){
-                        if(letterCode.charAt(k) == '0'){
-                            count++;
-                        }else{
-                            System.out.println("escreve 1");
-                            newLine.set(count);
-                            count++;
-                            System.out.println(newLine);
-                            StringBuilder s = new StringBuilder();
-                            for( int i = 0; i < newLine.length();  i++ )
-                            {
-                                s.append( newLine.get( i ) == true ? 1: 0 );
-                            }
-                            System.out.println(s);
-                        };
-                    }
-        }
-        saveDictionary(getDictionary(node));
+        BitSet newLine = new BitSet();
+
+        System.out.println(textLines);
+       for(String line : textLines){
+           for ( int lineReader =  0; lineReader < line.length(); lineReader++){
+//               System.out.println(line.charAt(lineReader));
+               char aux = line.charAt(lineReader);
+//               System.out.println( aux);
+               String letterCode =  dictionary.get((int) aux);
+               for(int k = 0 ; k < letterCode.length(); k++){
+                   if(letterCode.charAt(k) == '0'){
+                       count++;
+                   }else{
+//                       System.out.println("escreve 1");
+                       newLine.set(count);
+                       count++;
+//                       System.out.println(newLine);
+                       StringBuilder s = new StringBuilder();
+//                       for( int i = 0; i < newLine.length();  i++ )
+//                       {
+//                           s.append( newLine.get( i ) == true ? 1: 0 );
+//                       }
+//                       System.out.println(s);
+                   };
+               }
+           }
+
+           System.out.println("to string bitset: "+ newLine.toString());
+           String letterCode =  dictionary.get((int) '¨');
+           for(int k = 0 ; k < letterCode.length(); k++){
+               if(letterCode.charAt(k) == '0'){
+                   count++;
+               }else{
+//                       System.out.println("escreve 1");
+                   newLine.set(count);
+                   count++;
+//                       System.out.println(newLine);
+                   StringBuilder s = new StringBuilder();
+//                       for( int i = 0; i < newLine.length();  i++ )
+//                       {
+//                           s.append( newLine.get( i ) == true ? 1: 0 );
+//                       }
+//                       System.out.println(s);
+               };
+           }
+           saveFile(newLine,file);
+
+       }
+
+        saveDictionary(getDictionary(node),dicPath);
 
     }
 
-    private void saveDictionary(HashMap<Integer, String> dict) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("C:/Users/joswi/Documents/teste1.edt"));
+    private void saveDictionary(HashMap<Integer, String> dict, String dicPath) throws IOException {
+
+        Path path  = Paths.get(dicPath);
+        BufferedWriter writer = Files.newBufferedWriter(path, StandardCharsets.UTF_8);
         Set<Integer> a = dict.keySet();
         StringBuilder temp = new StringBuilder("");
         for (int t : a) {
@@ -85,8 +118,7 @@ public class Compressor implements Utilities {
         writer.close();
     }
 
-    public void saveFile(BitSet line) throws IOException {
-        Path file = Paths.get("C:/Users/joswi/Documents/saida.edz");
+    public void saveFile(BitSet line, Path file) throws IOException {
         Files.write(file, line.toByteArray());
     }
 

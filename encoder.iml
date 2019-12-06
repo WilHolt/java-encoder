@@ -33,5 +33,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="guava-annotations-r03" level="project" />
   </component>
 </module>

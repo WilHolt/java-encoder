@@ -7,15 +7,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c52237c-0eca-438a-ab69-73cbad49961e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/guava_annotations_r03.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/encoder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/encoder.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/encoder_jar/encoder.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/encoder_jar/encoder.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/encoder/com/wil/Compressor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/encoder/com/wil/Compressor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/encoder/com/wil/Extractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/encoder/com/wil/Extractor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/encoder/com/wil/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/encoder/com/wil/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/encoder/com/wil/heapQueueTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/encoder/com/wil/heapQueueTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/wil/Compressor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wil/Compressor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/wil/Extractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wil/Extractor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/wil/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wil/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/wil/heapQueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wil/heapQueueTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="CoverageViewManager">
     <option name="myElementSize" value="190" />
@@ -36,6 +48,10 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="encoder" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
@@ -43,9 +59,10 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Pictures/jar_files/guava-base-r03.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -149,22 +166,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/wil/heapQueueTest.java</url>
-          <line>111</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/wil/heapQueueTest.java</url>
           <line>40</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/wil/Extractor.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/wil/Main.java</url>
-          <line>24</line>
+          <url>file://$PROJECT_DIR$/src/com/wil/Compressor.java</url>
+          <line>78</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>

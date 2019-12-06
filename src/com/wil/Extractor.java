@@ -7,7 +7,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.BitSet;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
 
 public class Extractor {
@@ -16,7 +15,7 @@ public class Extractor {
     public Extractor(){
 
     }
-    public void extract(String arrayFile, String dicFile) throws IOException {
+    public void extract(String arrayFile, String dicFile, String extractedPath) throws IOException {
         File file = new File(arrayFile);
         FileInputStream fis = null;
         // Creating a byte array using the length of the file
@@ -30,7 +29,7 @@ public class Extractor {
         }catch(IOException ioExp){
             ioExp.printStackTrace();
         }
-        BitSet bitset;
+        BitSet bitset = new BitSet();
         bitset = BitSet.valueOf(bArray);
         StringBuilder aux = new StringBuilder("");
         StringBuilder SBtoSave = new StringBuilder("");
@@ -41,32 +40,56 @@ public class Extractor {
                 aux.append("1");
 //                System.out.println("o aux feito:" + aux);
                 char temp =findInDictionary(readDictionary(dicFile), aux);
-                if(temp != ' '){
-                    System.out.print(temp);
-                    SBtoSave.append(temp);
-                    aux.delete(0,aux.length());
+                System.out.println("caso 1:"+temp);
+                if(temp != '`'){
+                    if (temp == '¨') {
+                        System.out.print(temp);
+                        SBtoSave.append('\n');
+                        aux.delete(0,aux.length());
+                    }else{
+                        System.out.print(temp);
+                        SBtoSave.append(temp);
+                        aux.delete(0,aux.length());
+
+                    }
+
+
+
                 }
+
             }else{
                 aux.append("0");
                 char temp =findInDictionary(readDictionary(dicFile), aux);
-                if(temp != ' '){
-                    System.out.print(temp);
-                    SBtoSave.append(temp);
-                    aux.delete(0,aux.length());
+                System.out.println("caso 2"+ temp);
+                 if(temp != '`'){
+                     if (temp == '¨') {
+                         System.out.print(temp);
+                         SBtoSave.append('\n');
+                         aux.delete(0,aux.length());
+                     }else{
+                         System.out.print(temp);
+                         SBtoSave.append(temp);
+                         aux.delete(0,aux.length());
+                     }
+
                 }
             }
         }
         StringToSave = SBtoSave.toString();
-        saveFile(StringToSave);
+        saveFile(StringToSave,extractedPath);
         }
 
-    private void saveFile(String stringToSave) throws IOException {
-        Path file = Paths.get("C:/Users/joswi/Documents/extracted.txt");
-        Files.writeString(file, stringToSave);
+    private void saveFile(String stringToSave,String extractedPath) throws IOException {
+        Path file = Paths.get(extractedPath);
+//        Files.writeString(file, stringToSave,);
+        try (BufferedWriter writer = Files.newBufferedWriter(file, StandardCharsets.UTF_8)) {
+            writer.write(stringToSave);
+        }
+
     }
 
     private char findInDictionary(HashMap<Character,String> dictionary,  StringBuilder aux) {
-        char letter = ' ';
+        char letter = '`';
 //        System.out.println("aux recebido:" + aux);
         Set<Character> a = dictionary.keySet();
         String expected = aux.toString();
